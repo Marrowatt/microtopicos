@@ -8,12 +8,12 @@ import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name="produtos")
-public class Produtos {
+@Table(name="produto")
+public class Produto {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	@GeneratedValue(strategy=GenerationType.AUTO) // @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	
 	@NotBlank
 	private String nome;
