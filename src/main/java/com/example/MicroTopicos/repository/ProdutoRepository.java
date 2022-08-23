@@ -3,7 +3,7 @@ package com.example.MicroTopicos.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.model.Produto;
+import com.example.MicroTopicos.model.Produto;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{

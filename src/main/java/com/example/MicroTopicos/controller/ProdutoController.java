@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.MicroTopicos.model.Produto;
 import com.example.MicroTopicos.repository.ProdutoRepository;
-import com.example.model.Produto;
 
 @RestController
 @RequestMapping("/produto")
