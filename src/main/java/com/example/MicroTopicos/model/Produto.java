@@ -1,6 +1,7 @@
 package com.example.MicroTopicos.model;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,6 +15,9 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) // @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	@OneToMany(mappedBy="produto")
+    private Set<Estoque> estoque;
 	
 	@NotBlank
 	private String nome;
