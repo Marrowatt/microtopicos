@@ -1,6 +1,6 @@
 package com.example.MicroTopicos.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +11,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -30,16 +31,16 @@ public class Estoque {
 	@NotBlank
 	private String label;
 	
-	@NotBlank
+	@NotNull
 	private int quantidade;
 	
-	@NotBlank
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate data_criacao;
+	@NotNull
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime data_criacao;
 	
-	@NotBlank
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate data_atualizacao;
+	@NotNull
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime data_atualizacao;
 
 	public Long getId() {
 		return id;
@@ -49,12 +50,12 @@ public class Estoque {
 		this.id = id;
 	}
 
-	public Long getProduto_id() {
-		return produto_id;
+	public Produto getProduto() {
+		return produto;
 	}
 
-	public void setProduto_id(Long produto_id) {
-		this.produto_id = produto_id;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 
 	public String getLabel() {
@@ -73,19 +74,19 @@ public class Estoque {
 		this.quantidade = quantidade;
 	}
 
-	public LocalDate getData_criacao() {
+	public LocalDateTime getData_criacao() {
 		return data_criacao;
 	}
 
-	public void setData_criacao(LocalDate data_criacao) {
+	public void setData_criacao(LocalDateTime data_criacao) {
 		this.data_criacao = data_criacao;
 	}
 
-	public LocalDate getData_atualizacao() {
+	public LocalDateTime getData_atualizacao() {
 		return data_atualizacao;
 	}
 
-	public void setData_atualizacao(LocalDate data_atualizacao) {
+	public void setData_atualizacao(LocalDateTime data_atualizacao) {
 		this.data_atualizacao = data_atualizacao;
 	}
 

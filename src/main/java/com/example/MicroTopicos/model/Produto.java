@@ -1,10 +1,11 @@
 package com.example.MicroTopicos.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -26,24 +27,24 @@ public class Produto {
 	@Lob
 	private String descricao;
 	
-	@NotBlank
+	@NotNull
 	private int quantidade;
 	
-	@NotBlank
+	@NotNull
 	private double preco;
 	
-	@NotBlank
+	@NotNull
 	private boolean ativo;
 	
-	@NotBlank
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate data_criacao;
+	@NotNull
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime data_criacao;
 	
-	@NotBlank
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate data_atualizacao;
+	@NotNull
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime data_atualizacao;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -91,19 +92,19 @@ public class Produto {
 		this.ativo = ativo;
 	}
 
-	public LocalDate getData_criacao() {
+	public LocalDateTime getData_criacao() {
 		return data_criacao;
 	}
 
-	public void setData_criacao(LocalDate data_criacao) {
+	public void setData_criacao(LocalDateTime data_criacao) {
 		this.data_criacao = data_criacao;
 	}
 
-	public LocalDate getData_atualizacao() {
+	public LocalDateTime getData_atualizacao() {
 		return data_atualizacao;
 	}
 
-	public void setData_atualizacao(LocalDate data_atualizacao) {
+	public void setData_atualizacao(LocalDateTime data_atualizacao) {
 		this.data_atualizacao = data_atualizacao;
 	}
 	

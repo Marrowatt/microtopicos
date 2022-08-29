@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "afa1ef81-f89e-401c-8f47-235035cccf66",
+		"name": "Microtopicos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17222672"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "GET produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/produto",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET produto/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/produto/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantidade\": 0,\r\n    \"nome\": \"Caneca RGB\",\r\n    \"descricao\": \"Um utensílio para tomar bebidas a 60 FPS\",\r\n    \"preco\": 38.50,\r\n    \"ativo\": true,\r\n    \"data_criacao\": \"2022-08-28 19:58:15\",\r\n    \"data_atualizacao\": \"2022-08-28 19:58:15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/produto",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estoque",
+			"item": [
+				{
+					"name": "GET estoque",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estoque",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estoque"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET estoque/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estoque/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estoque",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST estoque",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"produto\": { \"id\": 19 },\r\n    \"quantidade\": 9,\r\n    \"label\": \"ENT\",\r\n    \"data_criacao\": \"2022-08-28 19:58:15\",\r\n    \"data_atualizacao\": \"2022-08-28 19:58:15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estoque",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estoque"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET estoque/produto/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estoque/produto/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estoque",
+								"produto",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
